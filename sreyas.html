@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sreyas Exams</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // Function to validate the UserID and Password
+        function validateForm() {
+            // Predefined UserID and Password
+            var validUserID = "22ve1a0566";
+            var validPassword = "07/02/2005";
+
+            // Get the values from the form fields
+            var userID = document.forms["loginForm"]["uid"].value;
+            var password = document.forms["loginForm"]["ps"].value;
+
+            // Validate UserID and Password
+            if (userID === validUserID && password === validPassword) {
+                // Allow the form to be submitted
+                return true;
+            } else {
+                // Display an alert for invalid credentials
+                alert("Invalid UserID or Password");
+                return false; // Prevent form submission
+            }
+        }
+    </script>
+</head>
+<body>
+    <center>
+        <img src="https://exams.sreyas.ac.in/Images/header.jpg" alt="Sreyas Institute of Engineering and Technology" width="700" height="100">
+    </center>
+
+    <div class="login-box">
+        <h2>Student Login</h2>
+        <!-- Add onsubmit attribute to call the validation function -->
+        <form name="loginForm" method="POST" action="result.html" onsubmit="return validateForm()">
+            <label for="uid">UserID</label><br>
+            <input type="text" id="uid" name="uid" required><br><br>
+
+            <label for="ps">Password</label><br>
+            <input type="password" id="ps" name="ps" required><br><br>
+
+            <input type="submit" name="login" value="Login" class="login-btn">
+            <input type="button" name="cancel" value="Cancel" class="cancel-btn"><br><br>
+
+            <a href="#" class="forgot-link">Forgot Your Password?</a><br><br>
+            <img src="https://via.placeholder.com/150x50?text=Powered+By+ERP" alt="Powered by ERP">
+        </form>
+    </div>
+</body>
+</html>
